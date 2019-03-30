@@ -1,0 +1,34 @@
+/ from https://www.engineyard.com/blog/rails-and-vue-js-part-1
+
+h1 Welcome to Vue
+#hello
+  = "{{message}}"
+  app
+
+#app-2
+  / v-bind bidns the element attributes (here, title) to the data on the Vue app
+  span v-bind:title="message"
+    | Hover your mouse over me for a few seconds to see my dynamically bound title!
+
+#app-3
+  / v-if toggles presence of an element depending on it's value
+  span v-if="seen" Now you see me
+
+#app-4
+  / v-for loops through each item on an Array
+  ol
+    li v-for="todo in todos"
+      | {{ todo.text }}
+
+#app-5
+  / v-on attaches a method to event listeners
+  p
+    | {{ message }}
+  button v-on:click="reverseMessage" Reverse Message
+
+#app-6
+  / v-model creates a two-way binding between form input and app state
+  / i.e. when user types in input, message in p will change to match
+  p
+    | {{ message }}
+  input v-model="message"
